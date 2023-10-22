@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+    background-color: #F5F3F4;
+
+}
+.wrapper{
+    position: fixed;
+    background-color: rgb(201, 142, 66);
+    z-index: 5;
+    
+}
+header{
+    position: fixed;     
+    display: flex;
+    background-color: #161A1D;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 9vh;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10%;
+    
+}
+header > *{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 110%;
+}
+.name{
+    font-style: italic;
+    flex-basis: 1;
+    display: flex;
+    position: relative;
+    color: whitesmoke;
+
+}
+.logo{
+    
+    font-weight: 600;
+    flex-basis: 1;
+    display: flex;
+    font-size: larger;
+    position: relative;
+    text-align: center;
+    color: #E5383B;
+    right: 1.5vw;
+}
+
+.icons{
+    position: relative;
+    display:inline-flex;
+    gap: 10px;
+    flex-basis: 1;
+    color: white;
+}
+
+.box{
+    display: flex;
+    position: relative;
+    margin-top: 20vh;
+    height: 60vh;
+    
+    justify-content: center;
+
+
+}
+.content{
+    color: aliceblue;
+    text-align: center;
+    justify-content: space-evenly;
+
+    width: 50%;
+    height: 50%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    position: relative;
+    flex: 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.buttons > * > *{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #161A1D;
+    color: white;
+    text-align: center;
+}
+
+#id_select{
+    overflow: hidden;
+    border: none;
+    background-color: inherit;
+    height: 50px;
+}
+
+#id_select::-moz-focus-inner {
+  border: 0;
+}
+#id_select:focus {
+  outline: none;
+}
+#id_select option{
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+
+
+
+.link{
+    flex: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+
+}
+#link-input{
+    position: relative;
+    width: 100%;
+    bottom: 20px;
+}
+.download{
+    flex: 1;
+    align-items: center;
+
+}
+.download > input{
+    position: relative;
+    font-size: 20px;
+    top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color:white;
+    background-color: #221e1e;
+    border: none;
+    border-radius: 20px;
+
+}
+.download > input:active{
+    font-size: 25px;
+}
+#err{
+    font-family: 'Montserrat', sans-serif;
+    color:red;
+    font-size: 30px;
+    background-color: black;
+}
+
+

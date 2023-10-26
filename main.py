@@ -36,33 +36,31 @@ class HomePage(MethodView):
             link = request.form.get("link")
             select = request.form.get("select")
             try:
-                if select == 'audio': # if audio is clicked
-
-
-                    yt = validate(link, False)
-                    title = yt.title
-                    yt.stream_to_buffer(buffer:=BytesIO())
-                    buffer.seek(0)
-                    return flask.send_file(buffer, as_attachment=True, download_name=f'{title}.mp3')
-
-
-
-                if select == 'video': # if audio is clicked
-                    yt = validate(link, True)
-                    title = yt.title
-                    yt.stream_to_buffer(buffer:=BytesIO())
-                    buffer.seek(0)
-
-                    return flask.send_file(buffer, as_attachment=True, download_name=f'{title}.mp4')
-
-
-                else:
-                    return render_template('index_error.html', error='Please Select Audio/Video!')
+                return self.download(link, select)
             except Exception:
                 return render_template('index_error.html', error='Invalid Link!')
         except Exception:
             return render_template('index_error.html',  error='Error! Try Again.')
 
+    def download(self, link, select):
+        if select == 'audio':  # if audio is clicked
+
+            yt = validate(link, False)
+            title = yt.title
+            yt.stream_to_buffer(buffer := BytesIO())
+            buffer.seek(0)
+            return flask.send_file(buffer, as_attachment=True, download_name=f'{title}.mp3')
+        if select == 'video':  # if audio is clicked
+            yt = validate(link, True)
+            title = yt.title
+            yt.stream_to_buffer(buffer := BytesIO())
+            buffer.seek(0)
+
+            return flask.send_file(buffer, as_attachment=True, download_name=f'{title}.mp4')
+
+
+        else:
+            return render_template('index_error.html', error='Please Select Audio/Video!')
 
 
 app.add_url_rule('/', view_func=HomePage.as_view('home'))

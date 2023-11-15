@@ -13,9 +13,11 @@ Welcome to my YouTube Video Downloader! This simple web app was created as my fi
 3. Hit the "Download" button.
 4. Wait a moment, and your file will be ready to save.
 
+## Preview
+![img.png](preview/img.png)
+
+
 ## Dependencies
 This project relies on the following technologies:
-- Flask
-- HTML
-- CSS
-- Python
+- flask
+- pytube
